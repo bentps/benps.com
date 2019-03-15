@@ -58,7 +58,7 @@ function catsort() {
         // make a header element for this category
         var thisheader = (toTitleCase(taglist()[i]));
         var thiscount = getcounts(taglist()[i]);
-        $('.categories').append('<div id=' + i + '><h4 class="category" id="'+i+'"><i class="fa fa-lg fa-caret-down fa-caret-right"></i> ' + thisheader + ' (' + thiscount + ')</h4></div>');
+        $('.categories').append('<div id=' + i + '><h4 class="category" id="'+i+'"><i class="fas fa-lg fa-caret-down fa-caret-right"></i> ' + thisheader + ' (' + thiscount + ')</h4></div>');
         //identify any posts that belong in this category
         $('.recent>li').each(function() {
           var thisli=$(this).html();
@@ -72,9 +72,8 @@ function catsort() {
 
     // And trigger toggling function now that categories element exists
     $('.category').on('click', function(){
-      console.log('clicked ' + this);
       $('.'+$(this).attr('id')).slideToggle();
-      $('#'+$(this).attr('id')+' .fa').toggleClass('fa-caret-right');
+      $('#'+$(this).attr('id')+' .fas').toggleClass('fa-caret-right');
     });
 
    }
