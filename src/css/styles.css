@@ -1,0 +1,15 @@
+html {overflow-y:hidden;}
+body {
+	margin: 0px;
+    background: #000000;
+    color: #dfdfdf;
+	text-align: left;	
+	font-size: 100%;
+	font-family: Calibri, sans-serif;
+}
+a{text-decoration:none;}
+.footer{font-size:14px;font-weight:bold;text-align:center;}
+.container:after,.row-padding:after,.clear:after,.row:after {
+	content:"";display:table;clear:both;
+}
+.container{padding:0.01em 16px}

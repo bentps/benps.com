@@ -1,0 +1,28 @@
+{{> blogheader }}
+  </header>
+
+  <!-- Index -->
+  <article id="index">
+    <h3>About</h3>
+    <p>This is Ben's collection of musings about slacklining, climbing, and physics.</p>
+    <p>This is another paragraph.</p>
+    <br>
+    <h3>Posts</h3>
+    <!-- Sort-by chooser-->
+    <div class="sortby">
+    <span id='by-date' class='nouserselect sort-unselected sort-selected'>date</span>
+    <span id='by-cat' class='nouserselect sort-unselected'>category</span>
+    </div>
+    <ul class="recent">
+    {{#each blog }}
+      <li>
+        <div class="title"><a href="blog/{{ link }}">{{ title }}</a></div>
+        <div class="date">Posted {{ moment date lang="en" format="MMM DD[,] YYYY" }}</div>
+        <div class="tags">{{#if tags}}Tags: {{tags}}{{/if}}</div>
+      </li>
+
+    {{/each}}
+    </ul>
+    <ul class="categories"></ul>
+  </article>
+{{> footer }}

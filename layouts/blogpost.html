@@ -1,0 +1,13 @@
+{{> blogheader}}
+</header>
+<article>
+<span class='back-to-list'><a href='../..'>&larr; Back to index</a></span>
+  <h2>{{ title }}</h2>
+  {{#if subtitle}} <span class='subtitle-in-article nouserselect'>{{ subtitle }}{{/if}}</span>
+  <div class="date">{{#if date}}Posted on {{ moment date lang="en" format="DD MMM[,] YYYY" }}{{/if}}</div>
+  <div class="tags">{{#if tags}}Tagged {{tags}}{{/if}}</div>
+  <br> <!-- why is this listing the date before what's written??-->
+  {{{ contents }}}
+</article>
+<br/>
+{{> footer }}
