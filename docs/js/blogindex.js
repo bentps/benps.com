@@ -1,10 +1,10 @@
 $(document).ready(function(){
 
 // Trigger style/sort fxn by clicking on date/cat spans
-$('#by-date').on('click', function(){sortby(0);});
-$('#by-cat').on('click', function(){sortby(1);});
+$('#by-date').on('click', function(){sortby(0);savesort('date');});
+$('#by-cat').on('click', function(){sortby(1);savesort('category')});
 
-// Function to style the date/cat spans, slide the slider, and trigger the sorting functions
+// Function to style the date/cat spans, change the tab look, and trigger the sorting functions
 function sortby(picked) {
   // Based on what we picked, style spans and trigger sorting functions  
     if (picked==1){$('#by-date').removeClass('sort-selected');$('#by-cat').addClass('sort-selected');catsort();}
@@ -58,39 +58,79 @@ function catsort() {
         // make a header element for this category
         var thisheader = (toTitleCase(taglist()[i]));
         var thiscount = getcounts(taglist()[i]);
-        $('.categories').append('<div id=' + i + '><h4 class="category" id="'+i+'"><i class="fas fa-lg fa-caret-down fa-caret-right"></i> ' + thisheader + ' (' + thiscount + ')</h4></div>');
+        $('.categories').append('<div><h4 class="category" id="c'+i+'c"><i class="fas fa-lg fa-caret-down fa-caret-right"></i> ' + thisheader + ' (' + thiscount + ')</h4></div>');
+        //$('.categories').append('<div id=' + i + '><h4 class="category" id="'+i+'"><i class="fas fa-lg fa-caret-down fa-caret-right"></i> ' + thisheader + ' (' + thiscount + ')</h4></div>');
         //identify any posts that belong in this category
         $('.recent>li').each(function() {
           var thisli=$(this).html();
           var thesetags = $(this).find('div.tags').html();
           if(thesetags.indexOf(taglist()[i]) != -1){
             //add these posts under the header
-            $('#'+i).after('<li class="'+i+'">'+thisli+'</li>');
+            $('#c'+i+'c').after('<li class="c'+i+'c">'+thisli+'</li>');
           }
         });
       }
-
-    // And trigger toggling function now that categories element exists
-    $('.category').on('click', function(){
-      $('.'+$(this).attr('id')).slideToggle();
-      $('#'+$(this).attr('id')+' .fas').toggleClass('fa-caret-right');
-    });
-
    }
 
+  // add toggling function now that elements exist 
+  $('.categories').find('.category').unbind('click'); // first unbind preexisting versions of this fxn
+  $('.category').on('click', function(){
+    var catname = $(this).attr('id');
+    cattoggle(catname);
+    savedrop(catname);
+  });
+  
   // Show categories list and hide by-date list
   $('.recent').css('display','none');
   $('.categories').css('display','block')
+
 }  
   
 
 // Re-display posts by date and hide the by-category sorting
 function datesort() {
-  $('.categories').css('display','none');
-  $('.recent').css('display','block')
+  $('.categories, .categories li').css('display','none');
+  $('.recent').css('display','block');
+  $('.fas').removeClass('fa-caret-down, fa-caret-right').addClass('fa-caret-right');
 }
 
-// On screen touch, add nouserselect class to more elements
+// categories toggling function
+function cattoggle(catname) {
+  $('.'+catname).slideToggle();
+  $('#'+catname+' .fas').toggleClass('fa-caret-right');
+}
+
+// save interactions with the date vs category tabs and the category dropdowns in url query string param
+function savesort(sortby) {
+  var sortbyparam = '?sort='+sortby;
+  history.pushState(null, '', sortbyparam);
+}
+function savedrop(dropcat) {
+  var urlParams = new URLSearchParams(window.location.search);
+  if (urlParams.get('sort') == 'category') {
+    var currentdrops = urlParams.getAll('v');
+    if (!currentdrops.includes(dropcat)) {urlParams.append('v',dropcat);var newurl='?'+urlParams.toString();}
+    else {var newurl='?'+urlParams.toString().replace('&v='+dropcat,'');}
+    history.pushState(null,'',newurl);
+  }
+}
+
+// function to do whatever is saved in the url query string param
+  if ('URLSearchParams' in window) {
+    var urlParams = new URLSearchParams(window.location.search);
+  // if we're sorting by category, put the category tab in front
+    if (urlParams.get('sort') == 'category') {
+      sortby(1);
+    // check if any categories should be expanded and if so expand them
+      var dropped = urlParams.getAll('v');
+      for (var i=0;i<dropped.length;i++) {cattoggle(dropped[i]);}
+    } 
+  // otherwise, sort by date
+    else {sortby(0);}
+  }
+
+
+// On screen touch (aka device is mobile/tablet), add nouserselect class to more elements
  window.addEventListener('touchstart', function onFirstTouch() {
     $('.category h4').addClass('nouserselect')
     $('.title').addClass('nouserselect')
