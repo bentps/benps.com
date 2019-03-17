@@ -1,6 +1,5 @@
 html {overflow-y:hidden;}
-body, html {
-	height:100%;
+body {
 	margin: 0px;
     background: #000000;
     color: #dfdfdf;
@@ -9,7 +8,7 @@ body, html {
 	font-family: Calibri, sans-serif;
 }
 a{text-decoration:none;}
-.footer{font-size:14px;font-weight:bold;text-align:center;margin-bottom:1.5em;}
+.footer{font-size:14px;font-weight:bold;text-align:center;}
 .container:after,.row-padding:after,.clear:after,.row:after {
 	content:"";display:table;clear:both;
 }
