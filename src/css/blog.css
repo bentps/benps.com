@@ -1,10 +1,10 @@
 html{-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;font-size:100%;}body{margin:0}
 html {overflow-y:auto;}
-body {
+body, html {
 	margin: 0px;
-    background: #1DC07E;
+  background-color: #1DC07E;
     /* alt websafe color: 33CC66; */
-    color: #000000;
+  color: #000000;
 	text-align: left;	
 	font-size: 100%;
 	font-family: Noto Sans, sans-serif;
