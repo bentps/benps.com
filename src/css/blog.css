@@ -1,7 +1,7 @@
 html{-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;font-size:100%;}body{margin:0}
 html {overflow-y:auto;}
 body, html {
-  height:100%;
+  min-height:100%;
 	margin: 0px;
   background-color: #1DC07E;
     /* alt websafe color: 33CC66; */
