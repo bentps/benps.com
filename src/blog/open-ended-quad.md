@@ -158,5 +158,5 @@ The open-ended quad is the most elegant and easy to rig of any bolted highline a
 
 <figure style='max-width:100%;'><img src='image2.jpg' alt='Another anchor'><figcaption>Another anchor rigged with the open-ended quad, showing how the anchor is easy to set up for unusual bolt patterns</figcaption></figure>
 
-
+Questions or comments? Email Ben (at) benps.com 
 
