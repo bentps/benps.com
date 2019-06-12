@@ -9,7 +9,7 @@ tags: highlining, inventions
 
 # The open-ended quad
 
-There are many safe ways to attach a highline to bolts, but for a long time I’ve been dissatisfied with the style and efficiency off all the usual techniques. I've finally found a solution I'm happy with.
+There are many safe ways to attach a highline to bolts, but for a long time I’ve been dissatisfied with the style and efficiency of all the usual techniques. I've finally found a solution I'm happy with.
 
 This concept is adapted from an anchor that Pierce Kenji showed me at Smith Rock. I got the basic idea of individually adjustable legs using a girth hitch overhand from him. His version used two sections of rope instead of four, could only attach to three bolts, and was a bit more complicated to tie. This idea also owes something to the quad anchor described in John Long’s climbing anchors book.
 
