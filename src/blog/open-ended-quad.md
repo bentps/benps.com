@@ -156,7 +156,9 @@ Cons:
 
 The open-ended quad is the most elegant and easy to rig of any bolted highline anchor I've seen. I've switched to it for all of my bolted highline anchors. My only reservation about the technique is that it is possible to leave insufficient tails for the girth hitch overhand knot. Use the open-ended quad at your own risk. If it seems overly complicated to you, the BFK is still a great option.
 
+Questions or comments? Email Ben (at) benps.com 
+
 <figure style='max-width:100%;'><img src='image2.jpg' alt='Another anchor'><figcaption>Another anchor rigged with the open-ended quad, showing how the anchor is easy to set up for unusual bolt patterns</figcaption></figure>
 
-Questions or comments? Email Ben (at) benps.com 
+
 
