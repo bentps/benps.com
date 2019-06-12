@@ -18,8 +18,8 @@ body, html {
 }
 .clear:after {content:"";display:table;clear:both;}
 h1{text-align:center;}
-h3{margin-top:1.5em;}
-ul{list-style-type:none;}
+h2,h3{margin-top:1.5em;}
+#index ul{list-style-type:none;}
 li{padding:1em;}
 a{text-decoration:underline;font-weight:bold;}
 a:link, a:visited {color:#000000;}
