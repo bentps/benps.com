@@ -29,7 +29,7 @@ metalsmith(__dirname)
   .metadata({
     site: {
       name: 'Ben Plotkin-Swing',
-      description: "Well balanced physics"
+      description: "Well Balanced Physics"
     }
   })
   .source('./src')
